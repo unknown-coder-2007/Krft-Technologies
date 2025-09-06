@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  /* You can even style the text with CSS! */
+  #my-blob-with-text text {
+    font-family: 'Poppins', sans-serif;
+    transition: 0.3s;
+  }
+  #my-blob-with-text:hover text {
+    font-size: 14px;
+    fill: yellow;
+  }
+  #my-blob-with-text:hover path {
+    transform: translate(50px, 50px) scale(1.1);
+  }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <h2>SVG with Text Inside</h2>
+  <p>Hover over the shape!</p>
+
+  <svg id="my-blob-with-text" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="250">
+    <path fill="rgba(64, 201, 255, 1)" d="M15.8,-0.5C15.8,13.9,7.9,27.8,-4.2,27.8C-16.2,27.8,-32.4,13.9,-32.4,-0.5C-32.4,-14.9,-16.2,-29.8,-4.2,-29.8C7.9,-29.8,15.8,-14.9,15.8,-0.5Z" width="100%" height="100%" transform="translate(50 50)" style="transition: 0.3s;"></path>
+    
+    <text x="50" y="52" 
+          text-anchor="middle" 
+          dominant-baseline="middle" 
+          fill="white" 
+          font-size="12" 
+          font-weight="bold">
+      Hello World
+    </text>
+  </svg>
+
+</body>
+</html>

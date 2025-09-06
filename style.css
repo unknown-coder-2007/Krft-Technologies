@@ -1,0 +1,269 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family: "Raleway", sans-serif; */
+  font-family: "Outfit", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #8c7bff;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* font-family: "Nunito", sans-serif; */
+  padding: 10px 20px;
+}
+
+nav a img {
+  height: 50px;
+}
+
+.nav-links {
+  margin-top: 3px;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.2rem;
+  transition: all ease 0.3s;
+}
+
+.nav-links a:hover {
+  color: #fed201;
+}
+
+.menu-icon {
+  display: none;
+}
+
+.responsive-nav {
+  display: none;
+  transform: translateX(100%);
+  transition: transform 0.4s ease-in-out;
+}
+
+/* From Uiverse.io by KINGFRESS */
+.animate-btn {
+  /* font-family: "Nunito", sans-serif; */
+  font-weight: 500;
+  color: rgb(0, 0, 0);
+  border-radius: 2rem;
+  cursor: pointer;
+  width: 150.02px;
+  height: 44.66px;
+  border: none;
+  background-color: #fed201;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+button .span-mother {
+  display: flex;
+  overflow: hidden;
+}
+
+button:hover .span-mother {
+  position: absolute;
+}
+
+button:hover .span-mother span {
+  transform: translateY(1.2em);
+}
+
+button .span-mother span:nth-child(1) {
+  transition: 0.2s;
+}
+
+button .span-mother span:nth-child(2) {
+  transition: 0.3s;
+}
+
+button .span-mother span:nth-child(3) {
+  transition: 0.4s;
+}
+
+button .span-mother span:nth-child(4) {
+  transition: 0.5s;
+}
+
+button .span-mother span:nth-child(5) {
+  transition: 0.6s;
+}
+
+button .span-mother span:nth-child(6) {
+  transition: 0.7s;
+}
+
+button .span-mother span:nth-child(7) {
+  transition: 0.8s;
+}
+
+button .span-mother span:nth-child(8) {
+  transition: 0.9s;
+}
+
+button .span-mother2 {
+  display: flex;
+  position: absolute;
+  overflow: hidden;
+}
+
+button .span-mother2 span {
+  transform: translateY(-1.2em);
+}
+
+button:hover .span-mother2 span {
+  transform: translateY(0);
+}
+
+button .span-mother2 span {
+  transition: 0.2s;
+}
+
+button .span-mother2 span:nth-child(2) {
+  transition: 0.3s;
+}
+
+button .span-mother2 span:nth-child(3) {
+  transition: 0.4s;
+}
+
+button .span-mother2 span:nth-child(4) {
+  transition: 0.5s;
+}
+
+button .span-mother2 span:nth-child(5) {
+  transition: 0.6s;
+}
+
+button .span-mother2 span:nth-child(6) {
+  transition: 0.7s;
+}
+
+button .span-mother2 span:nth-child(7) {
+  transition: 0.8s;
+}
+
+button .span-mother2 span:nth-child(8) {
+  transition: 0.9s;
+}
+
+/* nav bar ends here  */
+
+.hero-section-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 200px;
+  margin-bottom: 50px;
+  flex-wrap: wrap-reverse;
+}
+
+.hero-section {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 200px;
+  /* clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); */
+  /* font-family: "Fira Sans", sans-serif; */
+}
+
+.left-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.left-section .hero-text h1 {
+  color: white;
+  font-size: 5rem;
+  font-weight: 700;
+  line-height: 85px;
+}
+
+.hero-text p {
+  color: white;
+  font-size: 1.2rem;
+  line-height: 28px;
+}
+
+.right-section img {
+  height: 500px;
+}
+
+.span-mother span i {
+  margin-left: 5px;
+}
+
+.span-mother2 span i {
+  margin-left: 5px;
+}
+
+/* hero section ends here  */
+
+.content-section {
+  background-color: white;
+  /* background: #212cff; */
+  /* background: linear-gradient(180deg,rgba(33, 44, 255, 1) 0%, rgba(140, 123, 255, 1) 0%, rgba(255, 255, 255, 1) 100%); */
+  height: auto;
+  width: 100%;
+  /* clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%); */
+}
+
+
+.stats-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.stats-box {
+    height: 250px;
+    width: 250px;
+    clip-path: polygon(20% 34%, 100% 35%, 84% 73%, 0 73%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+}
+
+.box1{
+    background-color: #40C9FF;
+}
+
+.box2 {
+    background: #fed201;
+}
+
+.box3 {
+    background-color: #7665FF;
+}
+
+.box4 {
+    background-color: #FE4040;
+}
+
+/* stats section end here  */
+
