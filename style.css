@@ -221,11 +221,10 @@ button .span-mother2 span:nth-child(8) {
 
 .content-section {
   background-color: white;
-  /* background: #212cff; */
-  /* background: linear-gradient(180deg,rgba(33, 44, 255, 1) 0%, rgba(140, 123, 255, 1) 0%, rgba(255, 255, 255, 1) 100%); */
+
   height: auto;
   width: 100%;
-  /* clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%); */
+
 }
 
 
@@ -267,3 +266,104 @@ button .span-mother2 span:nth-child(8) {
 
 /* stats section end here  */
 
+/* about section starts here  */
+
+.about-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+    background: white;
+}
+
+.about-section-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.left-image-section img {
+    max-width: 100%;
+    height: auto;
+}
+
+.left-image-section,
+.right-content-section {
+    flex: 1;
+    min-width: 300px;
+}
+
+.right-content-section .about-heading h1 {
+  font-size: 1rem;
+  color: #7665FF;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  /* margin-bottom: 25px; */
+}
+
+.right-content-section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.about-content h1 {
+  color: #151924;
+  font-size: 3rem;
+}
+
+.about-content p {
+  color: #8683A1;
+  line-height: 24px;
+}
+
+
+.about-expert-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.about-expert-image {
+  height: 65px;
+  width: 65px;
+  border-radius: 50%;
+  background: #4e4e4e;
+}
+
+.about-expert-content h1 {
+  color: #151924;
+  font-size: 1.2rem;
+  font-weight: 500;
+
+}
+
+.about-expert-content p {
+  color: #8683A1;
+}
+
+.about-btn{
+  background: #FE4040;
+  color: white;
+  transition: all ease 0.4s;
+}
+
+.about-btn:hover{
+  background: white;
+  color: #FE4040;
+  border: 1px solid #FE4040;
+}
