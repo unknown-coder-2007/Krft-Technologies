@@ -533,4 +533,65 @@ button .span-mother2 span:nth-child(9) {
 
 
 /* Slanted section  */
+.slanted-section {
+      position: relative;
+      background: #32c3ff; /* Blue background */
+      padding: 100px 100px;
+      color: white;
+      text-align: left;
+      z-index: 1;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
+    .slanted-section h1 {
+      font-size: 3rem;
+      max-width: 600px;
+    }
+
+    .btn {
+      display: block;
+      /* margin-top: 20px; */
+      padding: 18px 40px;
+      background: #ffd500; /* Yellow button */
+      color: #000;
+      font-weight: 500;
+      border-radius: 10rem;
+      text-decoration: none;
+      font-size: 1.3rem;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #32C3FF;
+      border: 2px solid #ffd500;
+      color: #ffd500;
+    }
+
+    /* Purple strip on top */
+    .slanted-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 80px;
+      background: #6c63ff; /* Purple */
+      clip-path: polygon(0 0, 100% 80%, 100% 0%, 0% 0);
+      z-index: -1;
+    }
+
+    /* Yellow strip at bottom */
+    .slanted-section::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 80px;
+      background: #ffd500;
+      clip-path: polygon(0 100%, 100% 100%, 100% 20%, 0% 100%);
+      z-index: -1;
+    }
