@@ -110,5 +110,46 @@
         width: 350px;
         gap: 30px;
     }
+
+    .slanted-section {
+        flex-direction: column;
+        padding: 50px 20px;
+    }
+
+    .slanted-section h1 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .slanted-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 80px;
+      background: #6c63ff; /* Purple */
+      clip-path: polygon(0 0, 100% 40%, 100% 0%, 0% 0);
+      z-index: -1;
+    }
+
+    .slanted-section::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 80px;
+      background: #ffd500;
+      clip-path: polygon(0 100%, 100% 100%, 100% 60%, 0% 100%);
+      z-index: -1;
+    }
+
+    .btn {
+        margin-top: 15px;
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+
 }
 
