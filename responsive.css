@@ -107,7 +107,7 @@
     }
 
     .service-card {
-        width: 350px;
+        width: 300px;
         gap: 30px;
     }
 
@@ -151,5 +151,12 @@
         font-size: 1rem;
     }
 
+   .team-section-left{
+    padding: 50px 20px 0px 20px;
+   }
+
+   .team-members-main-wrapper{
+    padding: 0px 10px 50px 10px;
+   }
 }
 
