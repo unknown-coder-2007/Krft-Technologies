@@ -1,94 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Team Member Circle</title>
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background: #0f172a;
-      font-family: Arial, sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Input with Send Button</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #7b5afc; /* Purple background similar to your image */
+            margin: 0;
+        }
 
-    .team-member {
-      position: relative;
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      overflow: hidden;
-      cursor: pointer;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    }
+        .input-container {
+            position: relative;
+            width: 300px;
+        }
 
-    .team-member img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
+        .input-container input {
+            width: 100%;
+            padding: 12px 50px 12px 15px;
+            border-radius: 8px;
+            border: none;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
 
-    /* Overlay */
-    .overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.7);
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      text-align: center;
-      padding: 10px;
-    }
+        .input-container button {
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #fed201; /* Yellow button color */
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-    .team-member:hover .overlay {
-      opacity: 1;
-    }
-
-    .overlay h3 {
-      margin: 0;
-      font-size: 14px;
-    }
-
-    .overlay p {
-      margin: 3px 0 8px;
-      font-size: 12px;
-      opacity: 0.8;
-    }
-
-    .linkedin {
-      width: 24px;
-      height: 24px;
-      background: #0a66c2;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .linkedin img {
-      width: 14px;
-      height: 14px;
-      filter: invert(1);
-    }
-  </style>
+        .input-container button img {
+            width: 20px;
+            height: 20px;
+        }
+    </style>
 </head>
+
 <body>
-  <div class="team-member">
-    <img src="https://via.placeholder.com/120" alt="Team Member">
-    <div class="overlay">
-      <h3>Rishabh Kharwar</h3>
-      <p>Frontend Developer</p>
-      <a class="linkedin" href="https://www.linkedin.com/in/your-linkedin" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
-      </a>
+    <div class="input-container">
+        <input type="email" placeholder="Enter your email">
+        <button type="submit">
+            <i class="ri-send-plane-fill"></i>
+        </button>
     </div>
-  </div>
 </body>
+
 </html>

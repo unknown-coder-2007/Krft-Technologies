@@ -158,5 +158,48 @@
    .team-members-main-wrapper{
     padding: 0px 10px 50px 10px;
    }
+
+   .project-section {
+    clip-path: polygon(0 50px, 50% 0, 100% 50px, 100% 100%, 0% 100%);
+   }
+
+   .blog-secondary-heading p{
+    font-size: 0.9rem;
+   }
+
+     .blog-secondary-heading h1 {
+        font-size: 2.5rem;
+     }
+
+     .blog-card {
+        width: 350px;
+     }
+
+     .content-1 {
+        width: 50%;
+     }
+
+  .slanted-section-footer{
+    clip-path: polygon(0 0, 100% 2%, 100% 100%, 0% 100%);
+    
+  }
+
+  .footer-wrapper {
+    justify-self: flex-start;
+    align-items: flex-start;
+  }
 }
 
+@media (max-width: 768px) {
+  .slanted-section-footer {
+    align-items: flex-start; /* left align instead of center */
+  }
+
+  .footer-wrapper {
+    justify-content: flex-start; /* push content to left */
+  }
+
+  .content-1 {
+    width: 100%; /* so they stack properly */
+  }
+}
