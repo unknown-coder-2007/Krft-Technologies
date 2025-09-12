@@ -92,3 +92,47 @@ wrapper.addEventListener("transitionend", () => {
         });
     }
 });
+
+
+
+// certificate check logic 
+
+function verifyCertificate() {
+      const certId = document.getElementById("certId").value.trim();
+      const name = document.getElementById("name").value.trim();
+      const resultDiv = document.getElementById("result");
+
+      // Clear previous result
+      resultDiv.innerHTML = "";
+
+      if (!certId || !name) {
+        resultDiv.innerHTML = `<div class="result invalid">⚠️ Please enter both Certificate ID and Name.</div>`;
+        return;
+      }
+
+      // Search in certificatesData (from certificates.js)
+      const found = certificatesData.find(cert => 
+        cert.cert_id === certId && cert.name.toLowerCase() === name.toLowerCase()
+      );
+
+      if (found) {
+        const issueDate = new Date(found.issueDate.$date).toLocaleDateString();
+        resultDiv.innerHTML = `
+          <div class="result valid">
+            ✅ This certificate is <b>valid</b>.
+            <div class="details">
+              <p><b>Name:</b> ${found.name}</p>
+              <p><b>Course:</b> ${found.course}</p>
+              <p><b>Certificate ID:</b> ${found.cert_id}</p>
+              <p><b>Issue Date:</b> ${issueDate}</p>
+            </div>
+          </div>
+        `;
+      } else {
+        resultDiv.innerHTML = `<div class="result invalid">❌ This Certificate is not valid</div>`;
+      }
+
+      // Clear inputs
+      document.getElementById("certId").value = "";
+      document.getElementById("name").value = "";
+    }

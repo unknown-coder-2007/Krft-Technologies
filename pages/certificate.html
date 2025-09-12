@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Work with Krft</title>
+  <meta charset="UTF-8">
+  <title>Certificate Verification</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../responsive.css">
+  <link rel="stylesheet" href="../assets/certificate.css">
 
-    <link rel="stylesheet" href="../assets/career.css">
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="../responsive.css">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
-        integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+  <link rel="icon" type="image/png" href="images/logo2.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+        integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
 </head>
 <body>
 
     <nav>
-        <a href="../index.html"><img src="../images/logo2.png" alt=""></a>
+        <a href=""><img src="../images/logo2.png" alt=""></a>
         <div class="nav-links">
-            <a href="../index.html">Home</a>
+            <a href="">Home</a>
             <a href="pages/about.html">About</a>
             <a href="">Services</a>
             <a href="">Projects</a>
@@ -72,11 +71,18 @@
 
     </nav>
 
-    <section class="career-section-warpper">
-        
-    </section>
+  <section class="verify-form">
+    <div class="container">
+    <h2>Certificate Verification</h2>
+    <input type="text" id="certId" placeholder="Enter Certificate ID">
+    <input type="text" id="name" placeholder="Enter Name">
+    <button onclick="verifyCertificate()">Search</button>
 
-    <section class="slanted-section-footer">
+    <div id="result"></div>
+  </div>
+  </section>
+
+  <section class="slanted-section-footer">
 
         <div class="footer-wrapper">
             <div class="content-1">
@@ -130,8 +136,13 @@
             <p>Copyright © 2022 Krft Technologies. All Rights Reserved.</p>
         </div>
 
-
+        
     </section>
-    <script src="../script.js"></script>
+
+  <script src="../script.js"></script>
+
+  <!-- Certificates Data -->
+  <script src="../data/certificates.js"></script>
+ 
 </body>
 </html>
