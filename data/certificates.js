@@ -30,8 +30,17 @@ const certificatesData = [
   {
     "name": "Tanvi",
     "course": "C & C++",
-    "project": "Portfolio Site",
-    "cert_id": "CERT-TANVI01",
+    "project": "Portfolio",
+    "cert_id": "CERT-203695",
+    "issueDate": {
+      "$date": "2025-09-20T10:00:00.000Z"
+    }
+  },
+  {
+    "name": "Abhinav",
+    "course": "C & C++",
+    "project": "Portfolio",
+    "cert_id": "CERT-252525",
     "issueDate": {
       "$date": "2025-08-20T10:00:00.000Z"
     }
