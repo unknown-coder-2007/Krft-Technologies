@@ -97,42 +97,103 @@ wrapper.addEventListener("transitionend", () => {
 
 // certificate check logic 
 
-function verifyCertificate() {
-      const certId = document.getElementById("certId").value.trim();
-      const name = document.getElementById("name").value.trim();
-      const resultDiv = document.getElementById("result");
+// function verifyCertificate() {
+//       const certId = document.getElementById("certId").value.trim();
+//       const name = document.getElementById("name").value.trim();
+//       const resultDiv = document.getElementById("result");
 
-      // Clear previous result
-      resultDiv.innerHTML = "";
+//       // Clear previous result
+//       resultDiv.innerHTML = "";
 
-      if (!certId || !name) {
-        resultDiv.innerHTML = `<div class="result invalid">⚠️ Please enter both Certificate ID and Name.</div>`;
-        return;
-      }
+//       if (!certId || !name) {
+//         resultDiv.innerHTML = `<div class="result invalid">⚠️ Please enter both Certificate ID and Name.</div>`;
+//         return;
+//       }
 
-      // Search in certificatesData (from certificates.js)
-      const found = certificatesData.find(cert => 
-        cert.cert_id === certId && cert.name.toLowerCase() === name.toLowerCase()
-      );
+//       // Search in certificatesData (from certificates.js)
+//       const found = certificatesData.find(cert => 
+//         cert.cert_id === certId && cert.name.toLowerCase() === name.toLowerCase()
+//       );
 
-      if (found) {
-        const issueDate = new Date(found.issueDate.$date).toLocaleDateString();
-        resultDiv.innerHTML = `
-          <div class="result valid">
-            ✅ This certificate is <b>valid</b>.
-            <div class="details">
-              <p><b>Name:</b> ${found.name}</p>
-              <p><b>Course:</b> ${found.course}</p>
-              <p><b>Certificate ID:</b> ${found.cert_id}</p>
-              <p><b>Issue Date:</b> ${issueDate}</p>
-            </div>
-          </div>
-        `;
-      } else {
-        resultDiv.innerHTML = `<div class="result invalid">❌ This Certificate is not valid</div>`;
-      }
+//       if (found) {
+//         const issueDate = new Date(found.issueDate.$date).toLocaleDateString();
+//         resultDiv.innerHTML = `
+//           <div class="result valid">
+//             ✅ This certificate is <b>valid</b>.
+//             <div class="details">
+//               <p><b>Name:</b> ${found.name}</p>
+//               <p><b>Course:</b> ${found.course}</p>
+//               <p><b>Certificate ID:</b> ${found.cert_id}</p>
+//               <p><b>Issue Date:</b> ${issueDate}</p>
+//             </div>
+//           </div>
+//         `;
+//       } else {
+//         resultDiv.innerHTML = `<div class="result invalid">❌ This Certificate is not valid</div>`;
+//       }
 
-      // Clear inputs
-      document.getElementById("certId").value = "";
-      document.getElementById("name").value = "";
+//       // Clear inputs
+//       document.getElementById("certId").value = "";
+//       document.getElementById("name").value = "";
+//     }
+
+
+// Function to get URL parameters
+function getQueryParam(param) {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(param);
+}
+
+async function verifyCertificate(auto = false) {
+  const certId = auto ? getQueryParam("cert_id") : document.getElementById("certId").value.trim();
+  const name = auto ? getQueryParam("name") : document.getElementById("name").value.trim();
+  const resultDiv = document.getElementById("result");
+
+  resultDiv.innerHTML = "";
+
+  if (!certId || !name) {
+    if (!auto) {
+      resultDiv.innerHTML = `<div class="result invalid">⚠️ Please enter both Certificate ID and Name.</div>`;
     }
+    return;
+  }
+
+  try {
+    // certificatesData already loaded from certificates.js
+    const found = certificatesData.find(cert =>
+      cert.cert_id === certId && cert.name.toLowerCase() === name.toLowerCase()
+    );
+
+    if (found) {
+      const issueDate = new Date(found.issueDate.$date).toLocaleDateString();
+      resultDiv.innerHTML = `
+        <div class="result valid">
+          ✅ This certificate is <b>valid</b>.
+          <div class="details">
+            <p><b>Name:</b> ${found.name}</p>
+            <p><b>Course:</b> ${found.course}</p>
+            <p><b>Certificate ID:</b> ${found.cert_id}</p>
+            <p><b>Issue Date:</b> ${issueDate}</p>
+          </div>
+        </div>
+      `;
+    } else {
+      resultDiv.innerHTML = `<div class="result invalid">❌ Certificate not found or details do not match.</div>`;
+    }
+  } catch (error) {
+    resultDiv.innerHTML = `<div class="result invalid">⚠️ Error verifying certificate.</div>`;
+    console.error(error);
+  }
+
+  if (!auto) {
+    document.getElementById("certId").value = "";
+    document.getElementById("name").value = "";
+  }
+}
+
+// 🚀 Auto-run if cert_id and name exist in URL
+window.onload = () => {
+  if (getQueryParam("cert_id") && getQueryParam("name")) {
+    verifyCertificate(true);
+  }
+};
