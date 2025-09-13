@@ -188,6 +188,10 @@
     justify-self: flex-start;
     align-items: flex-start;
   }
+
+  .career-card{
+    width: 320px;
+  }
 }
 
 @media (max-width: 768px) {
