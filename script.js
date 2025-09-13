@@ -160,3 +160,7 @@ window.addEventListener("click", function(e) {
         popupModel.style.display = "none";
     }
 });
+
+
+
+// contact form 

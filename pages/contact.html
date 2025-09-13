@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | Krft Tech</title>
+    <title>Contact | Krft Tech</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../responsive.css">
     <link rel="stylesheet" href="../assets/about.css">
 
-    <link rel="icon" type="image/png" href="images/logo2.png">
+    <link rel="icon" type="image/png" href="../images/relicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,7 +32,7 @@
             <a href="./career.html">Career</a>
         </div>
         <!-- <a href="" class="contact">Contact Us</a> -->
-        <button class="contact-btn animate-btn">
+        <button onclick="window.location.href='#'" class="contact-btn animate-btn">
             <span class="span-mother">
                 <span>C</span>
                 <span>o</span>
@@ -111,36 +111,39 @@
                 <h2>Have Any Question?</h2>
                 <p>It is a long established fact that a reader will be distracted content of a page when looking.</p>
 
-                <form class="contact-form">
+                <form id="contactForm" class="contact-form">
                     <div class="form-row">
                         <div class="form-group">
-                            <input type="text" placeholder="Your Name*" required>
+                            <input type="text" name="Name" placeholder="Your Name*" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="Your Email*" required>
+                            <input type="email" name="Email" placeholder="Your Email*" required>
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
-                            <input type="tel" placeholder="Your Phone*" required>
+                            <input type="tel" name="Phone" placeholder="Your Phone*" required>
                         </div>
                         <div class="form-group">
-                            <select required>
+                            <select name="Services" required>
                                 <option value="">Services</option>
                                 <option>Web Development</option>
                                 <option>App Development</option>
                                 <option>UI/UX Design</option>
+                                <option>Others</option>
                             </select>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <textarea placeholder="Message..." required></textarea>
+                        <textarea name="Message" placeholder="Message..." required></textarea>
                     </div>
 
                     <button type="submit" class="submit-btn">Get In Touch</button>
                 </form>
+
+                <div id="formStatus"></div>
             </div>
 
         </div>
@@ -153,9 +156,9 @@
             <div class="content-1">
                 <img src="../images/logo2.png" alt="">
                 <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, make specimen book.</p>
-                <div class="footer-social-links">
-                    <a href=""><i class="ri-instagram-line"></i></a>
-                    <a href=""><i class="ri-linkedin-fill"></i></a>
+                  <div class="footer-social-links">
+                    <a href="https://www.instagram.com/krft.tech/"><i class="ri-instagram-line"></i></a>
+                    <a href="https://www.linkedin.com/company/krft-technologies"><i class="ri-linkedin-fill"></i></a>
                     <a href=""><i class="ri-twitter-x-line"></i></a>
                     <a href=""><i class="ri-mail-line"></i></a>
                 </div>
@@ -176,10 +179,9 @@
             <div class="content-1">
                 <h1>Contact Us</h1>
                 <div class="footer-contact">
-                    <p><span><i class="ri-map-pin-line"></i></span> 68D, Belsion Town 2365
-                        Fna city, LH 3656, USA</p>
-                    <p><span><i class="ri-phone-fill"></i></span> + 8 (123) 123 456 789</p>
-                    <p><span><i class="ri-mail-line"></i></span> iechnut@gmail.com</p>
+                    <p><span><i class="ri-map-pin-line"></i></span> Ghaziabad, Uttar Pradesh, India</p>
+                    <p><span><i class="ri-phone-fill"></i></span> +91 7011741131</p>
+                    <p><span><i class="ri-mail-line"></i></span> krfttechnologies@gmail.com</p>
                 </div>
             </div>
 
@@ -203,6 +205,50 @@
 
     </section>
     <script src="../script.js"></script>
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contactForm");
+  const statusDiv = document.getElementById("formStatus");
+  const submitBtn = form.querySelector("button[type='submit']");
+  const sheetDBUrl = "https://sheetdb.io/api/v1/bva7r2gvnxcay";
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    // Disable button to prevent double click
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Submitting...";
+
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch(sheetDBUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ data }),
+      });
+
+      if (response.ok) {
+        statusDiv.textContent = "Form submitted successfully!";
+        form.reset();
+      } else {
+        statusDiv.textContent = "Failed to submit the form.";
+        console.error(await response.text());
+      }
+    } catch (error) {
+      statusDiv.textContent = "Error submitting the form.";
+      console.error(error);
+    }
+
+    // Re-enable button
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Get In Touch";
+  });
+});
+
+</script>
+
 </body>
 
 </html>
